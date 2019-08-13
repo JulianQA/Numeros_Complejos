@@ -1,4 +1,3 @@
-
 import math
 #Hacer la suma
 def suma(a,b):
@@ -9,7 +8,7 @@ def suma(a,b):
 
 #Hacer la resta
 def resta(a,b):
-    resultado = a[0]-b[0]
+    ent = a[0]-b[0]
     imag = a[1]-b[1]
     return ent,imag
 
@@ -57,4 +56,23 @@ def cartesiano(a):
     first = r * coseno
     second = r * seno
     return first,second
+#Hacer Pruebas
+def pruebas():
+    number1 = [2,3]
+    number2 = [1,-5]
+    resSuma = (3,-2)
+    resResta = (1,8)
+    resMulti = (17,-7)
+    resDivi = (-0.5,0.5)
+    if suma(number1,number2) == resSuma and resta(number1,number2) == resResta and multiplicacion(number1,number2) == resMulti :
+        print('Suma:',suma(number1,number2))
+        print('Resta:',resta(number1,number2))
+        print('Multiplicación:',multiplicacion(number1,number2))
+        print('División:',division(number1,number2))
+        print("Las operaciones son correctas")
+    else:
+        print('Las operaciones son incorrectas')
+
+
+pruebas()
 
