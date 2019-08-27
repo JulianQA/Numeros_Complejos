@@ -6,8 +6,8 @@ Below are examples of how it should be used:
 
 ```python
     def suma(a,b): #'a' and 'b' are complex numbers in tuples
-        ent = a[0]+b[0] # 'ent' add the whole parts
-        imag = a[1]+b[1] # 'imag' add the imaginary parts
+        ent = a[0] + b[0] # 'ent' add the whole parts
+        imag = a[1] + b[1] # 'imag' add the imaginary parts
         return ent,imag # returns a tuple with the whole and imaginary part
 ```
 # Test
