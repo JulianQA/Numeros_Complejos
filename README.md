@@ -9,7 +9,19 @@ Below are examples of how it should be used:
         ent = a[0] + b[0] # 'ent' add the whole parts
         imag = a[1] + b[1] # 'imag' add the imaginary parts
         return ent,imag # returns a tuple with the whole and imaginary part
+        
+        
+    def suma_matrices(m1,m2):
+    matriz = [[0]*(len(m1[0])) for i in range(len(m1))]
+    if len(m1) == len(m2) and len(m1[0]) == len(m2[0]):
+        for a in range(len(m1)):
+            for b in range(len(m1[0])):
+                matriz[a][b] = suma(m1[a][b],m2[a][b])
+        return matriz
+    else:
+        return False
 ```
+In this case, the sum of matrices is being implemented, the code verifies if the operations can be done.
 # Test
 If you need to test your results, you must download the .py file called 'Test.py'. The files 'NumerosComplejos.py' and 'Test.py' must be in the same folder so that it can be executed correctly. Example of how it should be done:
 ```python
@@ -34,3 +46,7 @@ If you need to test your results, you must download the .py file called 'Test.py
     else, should correct the error
     
 ```
+# Made by:
+Julián Quintero
+Systems Engineer
+Escuela Colombiana de Ingeniería Julio Garavito
