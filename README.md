@@ -47,8 +47,6 @@ If you need to test your results, you must download the .py file called 'Test.py
     
 ```
 # Made by:
-Julián Quintero
-
-Systems Engineer
-
-Escuela Colombiana de Ingeniería Julio Garavito
+ + Julián Quintero
+ + Systems Engineer
+ + Escuela Colombiana de Ingeniería Julio Garavito
