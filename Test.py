@@ -111,14 +111,42 @@ class TestmyFunctions(unittest.TestCase):
         esperado = 9.11
         res = NumerosComplejos.norma(a)
         self.assertEqual(esperado,res)
-    def testnorma(self):
+    def testtensorpro(self):
         a = [(3,0),(4,0),(7,0)]
         b = [(-1,0),(2,0)]
         esperado = [(-3, 0), (6, 0), (-4, 0), (8, 0), (-7, 0), (14, 0)]
         res = NumerosComplejos.producto_tensor_vector(a,b)
-        self.assertEqual(esperado,res) 
+        self.assertEqual(esperado,res)
+    def testunitaria(self):
+        a = [[(1,0),(0,0)],[(0,0),(1,0)]]
+        esperado = True
+        res = NumerosComplejos.unit(a)
+        self.assertEqual(esperado,res)
+    def testtensormat(self):
+        a = [[(1,3),(1,8)],[(1,2),(3,1)]]
+        b = [[(2,5),(3,5)],[(4,6),(2,9)]]
+        esperado = [[[(-13, 11), (-12, 14)], [(-14, 18), (-25, 15)]],
+                    [[(-38, 21), (-37, 29)], [(-44, 38), (-70, 25)]],
+                    [[(-8, 9), (-7, 11)], [(-8, 14), (-16, 13)]],
+                    [[(1, 17), (4, 18)], [(6, 22), (-3, 29)]]]
+        res = NumerosComplejos.producto_tensor_matriz(a,b)
+        self.assertEqual(esperado,res)
+    def testacc(self):
+        a = [[(1,2),(2,1)]]
+        b = [[(5,3)],[(6,2)]]
+        esperado = [[(9, 23)]]
+        res = NumerosComplejos.accion(a,b)
+        self.assertEqual(esperado,res)
+    def testdistancia(self):
+        a = [[(1,2)],[(2,1)]]
+        b = [[(2,1)],[(3,2)]]
+        esperado = 2.0
+        res = NumerosComplejos.distancia(a,b)
+        self.assertEqual(esperado,res)
     
-        
+    
+    
+
         
 if __name__ == '__main__':
     unittest.main()
