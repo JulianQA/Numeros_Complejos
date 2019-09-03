@@ -81,6 +81,42 @@ class TestmyFunctions(unittest.TestCase):
         esperado = [[(3,6)], [(9,9)], [(3,3)]]
         res = NumerosComplejos.multi_matrices(a,b)
         self.assertEqual(esperado,res)
+    def testtranspuesta(self):
+        a = [[(1,2),(2,3),(1,5)],[(3,2),(6,8),(1,2)],[(2,1),(2,3),(2,5)]]
+        esperado = [[(1, 2), (3, 2), (2, 1)], [(2, 3), (6, 8), (2, 3)], [(1, 5), (1, 2), (2, 5)]]
+        res = NumerosComplejos.transpuesta(a)
+        self.assertEqual(esperado,res)
+    def testinversa(self):
+        a = [[(1,2)],[(3,3)],[(1,1)]]
+        esperado = [[(-1, -2)], [(-3, -3)], [(-1, -1)]]
+        res = NumerosComplejos.inver_matriz(a)
+        self.assertEqual(esperado,res)
+    def testcojugada(self):
+        a = [[(-1, -2)], [(-3, -3)], [(-1, -1)]]
+        esperado = [[(-1, 2)], [(-3, 3)], [(-1, 1)]]
+        res = NumerosComplejos.mat_conjugada(a)
+        self.assertEqual(esperado,res)
+    def testadjunta(self):
+        a = [[(5,0),(4,5)],[(4,-5),(13,0)]]
+        esperado = [[(5,0),(4,5)],[(4,-5),(13,0)]]
+        res = NumerosComplejos.mat_adjunta(a)
+        self.assertEqual(esperado,res)
+    def testhermitian(self):
+        a = [[(5,0),(4,5)],[(4,-5),(13,0)]]
+        esperado = True
+        res = NumerosComplejos.hermitian(a)
+        self.assertEqual(esperado,res)
+    def testnorma(self):
+        a = [[(3,2),(4,2),(7,1)]]
+        esperado = 9.11
+        res = NumerosComplejos.norma(a)
+        self.assertEqual(esperado,res)
+    def testnorma(self):
+        a = [(3,0),(4,0),(7,0)]
+        b = [(-1,0),(2,0)]
+        esperado = [(-3, 0), (6, 0), (-4, 0), (8, 0), (-7, 0), (14, 0)]
+        res = NumerosComplejos.producto_tensor_vector(a,b)
+        self.assertEqual(esperado,res) 
     
         
         
