@@ -1,4 +1,3 @@
-
 import math
 
 #Hacer la suma
@@ -18,7 +17,6 @@ def resta(a,b):
 
 #Hacer la multiplicacion
 def multiplicacion(a,b):
-    print(a,b)
     first = a[0] * b[0]
     second = a[0] * b[1]
     third = a[1] * b[0]
@@ -26,6 +24,7 @@ def multiplicacion(a,b):
     ent = first-fourth
     imag = second+third
     return ent,imag
+
 #Hacer el conjugado
 def conju(a):
     res = (a[0],a[1]*-1)
@@ -102,17 +101,88 @@ def suma_matrices(m1,m2):
         for b in range(cols):
             matriz[a][b] = suma(m1[a][b],m2[a][b])
     return matriz
-
-#Hacer multiplicacion de martices
+#Hacer multiplicacion de martices por escalar
 def multi_matrices(esc,m1):
     filas = len(m1)
     for i in range(len(m1)):
         x = len(m1[i])
     cols = x
-    print(filas,cols)
     matriz_res = [[None]*cols for i in range(filas)]
     for a in range(filas):
         for b in range(cols):
             matriz_res[a][b] = multiplicacion((esc,0),m1[a][b])
     return matriz_res
+
+#Hacer Transpuesta
+def transpuesta(m1):
+    filas = len(m1)
+    for i in range(len(m1)):
+        x = len(m1[i])
+    cols = x
+    matriz_res = [[None]*cols for i in range(filas)]
+    
+    for i in range(filas):
+        for j in range(cols):
+            matriz_res[i][j] = m1[j][i]
+    return matriz_res
+
+#Inversa de una matriz
+def inver_matriz(m1):
+    res  = multi_matrices(-1,m1)
+    return res
+
+#Matriz conjugada
+def mat_conjugada(m1):
+    for i in range(len(m1)):
+        for j in range(len(m1[i])):
+            m1[i][j] = conju(m1[i][j])
+    return m1
+
+#Matriz_adjunta
+def mat_adjunta(m1):
+    c = mat_conjugada(transpuesta(m1))
+    return c
+# Multipllicacion de  Matrices
+def multiplicacion_matrices(m1,m2):
+    matriz_res = [[(0,0)]*len(m2[0]) for i in range(len(m1))]
+    for i in range(len(m1)):
+        for j in range(len(m2[0])):
+            for k in range(len(matriz_res)):
+                matriz_res[i][j] = suma(matriz_res[i][j],multiplicacion(m1[i][k],m2[k][j]))
+    return matriz_res
+
+#Revisar si es unitaria
+def unit(m1):
+    res = multiplicacion_matrices(m1,mat_adjunta(m1))
+    identidad = [[(0,0)]*len(m1) for i in range(len(m1))]
+    for i in range(len(identidad)):
+            identidad[i][i] = (1,0)
+    if res == identidad:
+        return True
+    else:
+        return False
+
+#Revisar si es hermitian
+def hermitian(m1):
+    if mat_adjunta(m1) == m1:
+        return True
+    else:
+        return False
+    
+#Producto tensor entre vectores
+def producto_tensor_vector(v1,v2):
+    res = []
+    for i in range(len(v1)):
+        for j in range(len(v2)):
+            res.append(multiplicacion(v1[i],v2[j]))
+    return res
+#hacer la norma de matrices
+def norma(m1):
+    res = 0
+    for i in range(len(m1)):
+        for j in range(len(m1[0])):
+            res += (m1[i][j][0])**2 + (m1[i][j][1])**2
+    raiz = round(res**0.5,2)
+    return raiz
+
 
