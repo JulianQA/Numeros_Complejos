@@ -1,5 +1,5 @@
 # Complex Calculator
-This is a complex number calculator, which allows you to calculate the addition, subtraction, multiplication, division, conjugate, module, phase, conversion from polar to cartesian and from cartesian to polar, and some of these are already for matrix.
+This is a complex number calculator, which allows you to calculate the addition, subtraction, multiplication, division, conjugate, module, phase, conversion from polar to cartesian and from cartesian to polar, scalar multiplication by vector, transposed matrix, conjugate matrix, attached matrix, matrix norm, check if it is unitary, if it is Hermitian and tensor product. And some of these are already for matrix.
 # How does it work?
 First, you must download the .py file whose name is 'NumerosComplejos.py'. It's a library implemented in Python, which works based on functions, each of these receives the necessary parameters to execute the desired operation and return the result of each operation, keep in mind that every time the function returns a tuple is the same as an imaginary number, the first position being the whole part and the second position the imaginary part. 
 Below are examples of how it should be used:
