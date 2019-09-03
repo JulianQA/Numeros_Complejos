@@ -14,6 +14,7 @@ Below are examples of how it should be used:
 If you need to test your results, you must download the .py file called 'Test.py'. The files 'NumerosComplejos.py' and 'Test.py' must be in the same folder so that it can be executed correctly. Example of how it should be done:
 ```python
     import unittest
+    import NumerosComplejos
     class TestmyFunctions(unittest.TestCase):
           def testadd(self):
               a = (1,2) # the first tuple you want to operate
