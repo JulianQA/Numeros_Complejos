@@ -32,7 +32,11 @@ Below are examples of how it should be used:
         else:
             return False # if they aren't, return False
 ```
-In this case, the sum of matrices is being implemented, the code verifies if the operations can be done.
+
+if you need to try any function, without using the library unittest, you must do the following:
+```python
+     print(function_name_of_test(the_parameters_that_the_function receives))
+```
 # Test
 If you need to test your results, you must download the .py file called 'Test.py'. The files 'NumerosComplejos.py' and 'Test.py' must be in the same folder so that it can be executed correctly. Example of how it should be done:
 ```python
