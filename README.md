@@ -12,14 +12,14 @@ Below are examples of how it should be used:
         
         
     def suma_matrices(m1,m2): # m1 and m2 are matrices
-    matriz = [[0]*(len(m1[0])) for i in range(len(m1))] # create a matrix with the dimensions of m1 and m2
-    if len(m1) == len(m2) and len(m1[0]) == len(m2[0]): # check if the dimensions of the matrices are equal
-        for a in range(len(m1)):
-            for b in range(len(m1[0])):
-                matriz[a][b] = suma(m1[a][b],m2[a][b]) #if they are, add position to position
-        return matriz # return a matrix added
-    else:
-        return False # if they aren't, return False
+        matriz = [[0]*(len(m1[0])) for i in range(len(m1))] # create a matrix with the dimensions of m1 and m2
+        if len(m1) == len(m2) and len(m1[0]) == len(m2[0]): # check if the dimensions of the matrices are equal
+            for a in range(len(m1)):
+                for b in range(len(m1[0])):
+                    matriz[a][b] = suma(m1[a][b],m2[a][b]) #if they are, add position to position
+            return matriz # return a matrix added
+        else:
+            return False # if they aren't, return False
 ```
 In this case, the sum of matrices is being implemented, the code verifies if the operations can be done.
 # Test
