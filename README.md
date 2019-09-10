@@ -20,6 +20,17 @@ Below are examples of how it should be used:
             return matriz # return a matrix added
         else:
             return False # if they aren't, return False
+            
+            
+    def unit(m1): # m1 is a matrix
+        res = multiplicacion_matrices(m1,mat_adjunta(m1)) # 'res' is assigned matrix multiplication
+        identidad = [[(0,0)]*len(m1) for i in range(len(m1))] # create a matrix with the dimension of m1
+        for i in range(len(identidad)):
+                identidad[i][i] = (1,0) # create a identity matrix
+        if res == identidad: # check if the multiplication is equal to identity matrix 
+            return True # and returns True if it's unitary
+        else:
+            return False # if they aren't, return False
 ```
 In this case, the sum of matrices is being implemented, the code verifies if the operations can be done.
 # Test
@@ -34,12 +45,27 @@ If you need to test your results, you must download the .py file called 'Test.py
               esperado = (2,5) # the result you expect to get
               res = NumerosComplejos.suma(a,b) # the result that the function gives
               self.assertEqual(esperado,res)
+           def testsumamatriz(self):
+              a = [[(1,2)],[(2,1)]] # the first matrix you want to operate
+              b = [[(3,1)],[(1,3)]] # the second matriz you want to operate
+              esperado = [[(4,3)], [(3,4)]] # the result you expect to get
+              res = NumerosComplejos.suma_matrices(a,b) # the result that the functions gives
+              self.assertEqual(esperado,res)
+           def testunitaria(self):
+              a = [[(1,0),(0,0)],[(0,0),(1,0)]] # the first matrix you want to operate
+              esperado = True # the result you expect to get
+              res = NumerosComplejos.unit(a) # the result that the functions gives
+              self.assertEqual(esperado,res)
+        
+    
     if __name__ == '__main__':
           unittest.main() 
+               
     #############################
+    
     In the Python console you should see:
     ..............................
-    Ran 1 tests in (your time)s
+    Ran 3 tests in (your time)s
 
     OK
     ..............................
