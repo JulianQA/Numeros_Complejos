@@ -33,7 +33,7 @@ Below are examples of how it should be used:
             return False # if they aren't, return False
 ```
 
-if you need to try any function, without using the library unittest, you must do the following:
++ if you need to try any function, without using the library unittest, you must do the following:
 ```python
      print(function_name_of_test(the_parameters_that_the_function receives))
 ```
